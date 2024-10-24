@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"cd te
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
