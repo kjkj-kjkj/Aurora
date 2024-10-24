@@ -1,0 +1,14 @@
+{
+  "name": "aurora",
+  "version": "1.0.0",
+  "description": "A tool to connect to aurora api",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
