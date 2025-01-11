@@ -1,9 +1,5 @@
-const sum = require('./sum');
+const fetch = require('../src/index');
 
-<<<<<<< Updated upstream
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1,2)).toBe(3);
-=======
 test('fetch returns data', () => {
     return fetch('https://jsonplaceholder.typicode.com/posts/1').then(data => {
         expect(data).isNotNull; //toEqual({"tets": "test"}); 
@@ -16,18 +12,19 @@ test('fetch returns data', () => {
 //axios api - read documentation to see 
 //https://jsonplaceholder.typicode.com/posts/1
 // http://aurorawatch-api.lancs.ac.uk/0.2/aurorawatch-api.dtd
+// activity status_id= "colour" this is what i want
 
 test('fetch returns status', () => {   //change status into response so when the promise gets back we get everything
-    return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/aurorawatch-api').then(Response => {
-      console.log(Response);
+    return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/aurorawatch-api.dtd').then(Response => {
+      //console.log(Response);
       expect(Response.status).toEqual(200);
       expect(Response.data).isNotNull;
     });
 });
 
 test('fetch returns no data', () => {  
-    return fetch('https://documentation.history.mot.api.gov.uk/testst').then(Response => {
-      expect(Response.status).toEqual(404);
+    return fetch('https://documentation.history.mot.api.gov.uk/testst').catch(RejectionError => {    //because it doesn't fetch anything - nothing to fetch
+      expect(RejectionError.status).toEqual(404); //so can't use then as it never gets data for then, instead catch 
     });
->>>>>>> Stashed changes
-});
+    
+}); //it fails eventhough it sends a 404 - why?
