@@ -15,7 +15,7 @@ test('fetch returns data', () => {
 // activity status_id= "colour" this is what i want
 
 test('fetch returns status', () => {   //change status into response so when the promise gets back we get everything
-    return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/aurorawatch-api.dtd').then(Response => {
+    return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/project-list.xml').then(Response => {
       console.log(Response); //it seems to be a mock, not the actual api/data 
       expect(Response.status).toEqual(200);
       expect(Response.data).isNotNull;
