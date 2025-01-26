@@ -9,11 +9,16 @@ test('passes if receives data', () => {
     expect(() => processfn('somedata')).isNotNull;
 });
 
-test('passes if data is not json', () => {
+test('returns json', () => {
     //expect(() => processfn('here have this')).toThrow();
-    expect(() => processfn('here have this').toBe('not a JSON'));
+    //try declaring variable with valid json called data and then pass it to processfn
+    const data = '{"test": "test"}';
+    expect(processfn(data).test).toBe("test"); // proves it is json cos we have have asserted that it is json
+    //by referencing the test key in the json object
 });
 
 test('passes if data is json', () => {
-    expect(() => processfn(ex_json).toBe('not is JSON')); //this should not pass at the moment but it is passing 
+    //what would be a invalid bit of json ? -- maybe a string that is not json like {]{(%^)
+    const data = '';
+    expect( processfn(data)).toBe('not JSON'); //this should not pass at the moment but it is passing 
 });

@@ -5,4 +5,10 @@
 //finish off test to finish current test so it returns data
 // test to make sure u get json
 // use library read xml from process fn
-// get status 
+
+//dummy test to make sure it works
+ test('dummy test', () => {
+   expect(1).toEqual(1);
+});
+
+

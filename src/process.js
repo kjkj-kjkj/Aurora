@@ -5,11 +5,10 @@ function processfn(data){
     }
     else {
         try{
-            JSON.parse(data);
-            return 'is JSON';
+            return JSON.parse(data);
         }
         catch(err){
-            return 'not a JSON'
+            return 'not JSON'
         }
     }
 }
