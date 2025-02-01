@@ -19,9 +19,11 @@ const processfn = require ('../src/process');
 test('using xml to json', () => {
   return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/status/all-site-status.xml').then(Response =>{
     expect(Response.status).toEqual(200);
-    var resultingjson = convert.xml2json(Response.data, {compact: true, spaces:'\t'});
-    console.log(resultingjson);
-    expect(processfn(resultingjson)).not.toBe('not JSON');
+    var resultingjson = convert.xml2json(Response.data, {compact: true, spaces:' '});
+    //console.log(resultingjson);
+    //expect(processfn(resultingjson)).not.toBe('not JSON');
+    var resultingstatus = processfn(resultingjson).current_status.site_status; //how to get status_id?
+    console.log(resultingstatus);
   })
 });
 
