@@ -1,4 +1,5 @@
 const fetch = require('../src/fetch');
+var convert = require('xml-js'); //not sure where i should put this 
 
 test('fetch returns data', () => {
     return fetch('https://jsonplaceholder.typicode.com/posts/1').then(data => {
