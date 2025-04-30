@@ -22,7 +22,7 @@ test('using xml to json', () => {
     var resultingjson = convert.xml2json(Response.data, {compact: true, spaces:' '});
     //console.log(resultingjson);
     //expect(processfn(resultingjson)).not.toBe('not JSON');
-    var resultingstatus = processfn(resultingjson).current_status.site_status; //how to get status_id?
+    var resultingstatus = processfn(resultingjson).current_status.site_status; //how to get status_id? as .status_id --> undefined?
     console.log(resultingstatus);
   })
 });
