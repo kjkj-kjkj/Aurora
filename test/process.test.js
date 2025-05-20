@@ -28,6 +28,11 @@ test('passes when handed a json file', () => {
     expect(processfn(data)).toEqual(ex_json); //that can then be used in the function 
 });
 
-
+test('logs the error', () =>{
+    const data = '@,jkkg&^';
+    const spy = jest.spyOn(console, 'log'); //console is the object, . ,log is the method 
+    const result = processfn(data);
+    expect(spy).toHaveBeenCalled();
+})
 // so when writing a test for the aurora api, will have to expect something like this     const data = '{"test": "test"}'; 
 // and write tests around a variable that you know will be there e.g. status colour 

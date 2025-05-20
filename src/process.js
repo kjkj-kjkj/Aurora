@@ -8,7 +8,8 @@ function processfn(data){
             return JSON.parse(data);
         }
         catch(err){
-            return 'not JSON'
+            console.log('not JSON');
+            return 'not JSON';
         }
     }
 }
