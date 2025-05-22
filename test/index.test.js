@@ -20,7 +20,7 @@ const dataNoInternet = '<?xml ?><current_status api_version="0.2.5"><updated><da
 });
 
 test('using xml to json', () => {
-  const resp = {status: 200, data:'<?xml ?><current_status api_version="0.2.5"><updated><datetime>2025-05-20T19:36:32+0000</datetime></updated><site_status project_id="project:SAMNET" site_id="site:SAMNET:CRK2" site_url="http://aurorawatch-api.lancs.ac.uk/0.2.5/project/samnet/crk2.xml" status_id="green"/><site_status alerting="true" project_id="project:AWN" site_id="site:AWN:SUM" site_url="http://aurorawatch-api.lancs.ac.uk/0.2.5/project/awn/sum.xml" status_id="green"/></current_status> '}; //data: '<?xml ?><current_status>test</current_status>'};
+  const resp = {status: 200, data: dataNoInternet}; //has to be data: as data is the object?
   axios.get.mockResolvedValue(resp);
   return fetch(resp).then(Response =>{
     expect(Response.status).toEqual(200);
