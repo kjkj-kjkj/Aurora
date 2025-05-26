@@ -26,7 +26,7 @@ test('using xml to json', () => {
     expect(Response.status).toEqual(200);
     //console.log(Response);
     var resultingjson = convert.xml2json(Response.data, {compact: true, spaces:' '});
-    console.log(resultingjson);
+    //console.log(resultingjson);
     //expect(processfn(resultingjson)).not.toBe('not JSON');
 
     // make this another test - sites and status - interpret the data
