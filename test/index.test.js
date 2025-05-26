@@ -32,8 +32,11 @@ test('using xml to json', () => {
     // make this another test - sites and status - interpret the data
     var resultingstatus = processfn(resultingjson);
     //.current_status.site_status[0]._attributes.status_id; //how to get status_id? as .status_id --> undefined?
-    console.log(resultingstatus);
+    console.log(resultingstatus.current_status.site_status[0]._attributes.status_id);
+    console.log(resultingstatus.current_status.site_status[1]._attributes.status_id);
+    
   })
+});
 
  /*
   return fetch('http://aurorawatch-api.lancs.ac.uk/0.2/status/all-site-status.xml').then(Response =>{
@@ -48,7 +51,7 @@ test('using xml to json', () => {
     console.log(resultingstatus);
   })
     */
-});
+
 
 // write some test code to prove what i get out is what i want - testing post processing if get red stats, green staus what jappens
 // then app code to what do if get red status or green status
